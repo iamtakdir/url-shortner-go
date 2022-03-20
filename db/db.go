@@ -25,7 +25,6 @@ var DB *gorm.DB
 
 func Connect() {
 	//changed database config
-	dsn := "host=localhost user=postgres password=843543 dbname=testdb port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 	db, err := gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
 	if err != nil {
 		log.Fatalln(err)
