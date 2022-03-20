@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"net/http"
 	"os"
 
 	"github.com/iamtakdir/url-shortner-go/db"
@@ -18,7 +20,9 @@ func main() {
 	routes.Routes(e)
 
 	// Start server
-	e.Start(":" + os.Getenv("PORT"))
+	if err := e.Start(":" + os.Getenv("PORT")); err != http.ErrServerClosed {
+		log.Fatal(err)
+	  }
 	
 }
 
