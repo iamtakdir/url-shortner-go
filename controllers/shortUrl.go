@@ -3,15 +3,16 @@ package controllers
 import (
 	"errors"
 	"fmt"
+	"net/http"
+
 	"github.com/google/uuid"
 	"github.com/iamtakdir/url-shortner-go/db"
 	"github.com/iamtakdir/url-shortner-go/models"
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
-	"net/http"
 )
 
-const link = "localhost:3000"
+const link = "https://lfix-url.herokuapp.com"
 
 func ShortUrl(c echo.Context) error {
 
