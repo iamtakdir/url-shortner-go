@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/iamtakdir/url-shortner-go/db"
 	"github.com/iamtakdir/url-shortner-go/routes"
 	"github.com/labstack/echo/v4"
@@ -16,7 +18,8 @@ func main() {
 	routes.Routes(e)
 
 	// Start server
-	e.Logger.Fatal(e.Start("localhost:3000"))
+	e.Start(":" + os.Getenv("PORT"))
+	
 }
 
 // Handler
